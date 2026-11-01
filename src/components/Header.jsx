@@ -15,6 +15,7 @@ const Header = () => {
       <nav className="flex flex-wrap gap-5 max-[640px]:hidden" id="navMenu">
         <a className="text-sm text-muted hover:text-accent" href="#solucao">A Solução</a>
         <a className="text-sm text-muted hover:text-accent" href="#publico-alvo">Público‑Alvo</a>
+        <a className="text-sm text-muted hover:text-accent" href="#analise">Descobrir músicas</a>
         <a className="text-sm text-muted hover:text-accent" href="#galeria">Galeria</a>
         <a className="text-sm text-muted hover:text-accent" href="#equipe">Nossa Equipe</a>
         <a className="text-sm text-muted hover:text-accent" href="#contato">Contato</a>

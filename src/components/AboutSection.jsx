@@ -1,3 +1,19 @@
+import { Film, Palette, Sparkles } from 'lucide-react'
+import CardGrid from './CardGrid'
+import InfoCard from './InfoCard'
+
+const steps = [
+  { id: 'capture', number: '01', title: 'Capturar', description: 'O usuário fotografa normalmente.' },
+  { id: 'curation', number: '02', title: 'Curadoria por IA', description: 'A cena é analisada (cor, luz, cenário) e a câmera sugere estilo e música compatíveis.' },
+  { id: 'share', number: '03', title: 'Compartilhar', description: 'Vídeo pronto, direto para a rede social.' },
+]
+
+const styles = [
+  { id: 'cinematic', icon: Film, title: 'Cinematográfica', description: 'Tons contidos e trilha instrumental, para registros que pedem clima de cena.' },
+  { id: 'minimal', icon: Sparkles, title: 'Minimalista', description: 'Cortes limpos e áudio discreto, quando o momento fala por si só.' },
+  { id: 'vibrant', icon: Palette, title: 'Vibrante', description: 'Cores saturadas e batida acelerada, para conteúdo feito para viralizar.' },
+]
+
 const AboutSection = () => {
   return (
       <section className="mx-auto w-full max-w-[1180px] px-[3%] py-20 max-[640px]:px-[5%] max-[640px]:py-[55px]" id="solucao">
@@ -23,23 +39,11 @@ const AboutSection = () => {
               <p className="mb-[15px] text-xs tracking-[2px] text-accent uppercase">COMO FUNCIONA</p>
               <h2 className="mb-[15px] max-w-[500px] text-[clamp(26px,3vw,37px)]">Três passos. Um único fluxo.</h2>
 
-              <ol className="mt-[25px] grid grid-cols-3 gap-5 max-[1024px]:grid-cols-2 max-[640px]:grid-cols-1">
-                  <li className="rounded-[18px] border border-border bg-card p-[25px]">
-                      <span className="mb-[10px] block text-sm text-accent">01</span>
-                      <h3 className="mb-[15px] text-[17px]">Capturar</h3>
-                      <p className="m-0 text-sm text-muted">O usuário fotografa normalmente.</p>
-                  </li>
-                  <li className="rounded-[18px] border border-border bg-card p-[25px]">
-                      <span className="mb-[10px] block text-sm text-accent">02</span>
-                      <h3 className="mb-[15px] text-[17px]">Curadoria por IA</h3>
-                      <p className="m-0 text-sm text-muted">A cena é analisada (cor, luz, cenário) e a câmera sugere estilo e música compatíveis.</p>
-                  </li>
-                  <li className="rounded-[18px] border border-border bg-card p-[25px]">
-                      <span className="mb-[10px] block text-sm text-accent">03</span>
-                      <h3 className="mb-[15px] text-[17px]">Compartilhar</h3>
-                      <p className="m-0 text-sm text-muted">Vídeo pronto, direto para a rede social.</p>
-                  </li>
-              </ol>
+              <CardGrid
+                  className="mt-[25px] grid grid-cols-3 gap-5 max-[1024px]:grid-cols-2 max-[640px]:grid-cols-1"
+                  items={steps}
+                  renderItem={(step) => <InfoCard {...step} />}
+              />
 
               <div className="my-[50px] h-px bg-border"></div>
 
@@ -50,20 +54,11 @@ const AboutSection = () => {
                   O usuário só escolhe o resultado que combina com o momento.
               </p>
 
-              <div className="mt-[25px] grid grid-cols-3 gap-5 max-[1024px]:grid-cols-2 max-[640px]:grid-cols-1">
-                  <div className="rounded-[18px] border border-border bg-card p-[25px]">
-                      <h3 className="mb-[15px] text-[17px]">🎬 Cinematográfica</h3>
-                      <p className="m-0 text-sm text-muted">Tons contidos e trilha instrumental, para registros que pedem clima de cena.</p>
-                  </div>
-                  <div className="rounded-[18px] border border-border bg-card p-[25px]">
-                      <h3 className="mb-[15px] text-[17px]">✨ Minimalista</h3>
-                      <p className="m-0 text-sm text-muted">Cortes limpos e áudio discreto, quando o momento fala por si só.</p>
-                  </div>
-                  <div className="rounded-[18px] border border-border bg-card p-[25px]">
-                      <h3 className="mb-[15px] text-[17px]">🌈 Vibrante</h3>
-                      <p className="m-0 text-sm text-muted">Cores saturadas e batida acelerada, para conteúdo feito para viralizar.</p>
-                  </div>
-              </div>
+              <CardGrid
+                  className="mt-[25px] grid grid-cols-3 gap-5 max-[1024px]:grid-cols-2 max-[640px]:grid-cols-1"
+                  items={styles}
+                  renderItem={(style) => <InfoCard {...style} />}
+              />
           </div>
       </section>
   )

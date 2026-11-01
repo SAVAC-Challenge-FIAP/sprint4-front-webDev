@@ -1,6 +1,7 @@
 const links = [
   ['#solucao', 'A Solução'],
   ['#publico-alvo', 'Público‑Alvo'],
+  ['#analise', 'Descobrir músicas'],
   ['#galeria', 'Galeria'],
   ['#equipe', 'Nossa Equipe'],
   ['#contato', 'Contato'],

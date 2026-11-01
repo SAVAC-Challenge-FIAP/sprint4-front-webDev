@@ -1,3 +1,14 @@
+import { GraduationCap, Palette, Smartphone } from 'lucide-react'
+import Card from './Card'
+import CardGrid from './CardGrid'
+import InfoCard from './InfoCard'
+
+const audiences = [
+  { id: 'students', icon: GraduationCap, title: 'Estudantes', description: 'Momentos de faculdade, amigos, viagens e eventos que merecem ser registrados sem esforço' },
+  { id: 'generation-z', icon: Smartphone, title: 'Geração Z', description: 'Acostumados com vídeo curto e experiências rápidas, sem terem que fazer muito.' },
+  { id: 'creators', icon: Palette, title: 'Criadores casuais', description: 'Querem produzir conteúdo bonito no dia a dia com facilidade.' },
+]
+
 const AudienceSection = () => {
   return (
       <section className="w-full border-y border-border bg-section px-[3%] py-20 max-[640px]:px-[5%] max-[640px]:py-[55px]" id="publico-alvo">
@@ -17,7 +28,7 @@ const AudienceSection = () => {
                   </ul>
               </div>
 
-              <aside className="rounded-[18px] border border-border bg-card p-[30px]">
+              <Card as="aside" className="bg-card p-[30px]">
                   <p className="mb-[15px] text-xs tracking-[2px] text-accent uppercase">PERSONA</p>
                   <h3 className="mb-[15px] text-[17px]">Estudante Full‑time</h3>
                   <dl className="grid gap-5">
@@ -25,24 +36,15 @@ const AudienceSection = () => {
                       <div><dt className="mb-[3px] text-xs text-subtle uppercase">Frustração</dt><dd className="m-0 text-[15px]">Editar em apps separados até perder a vontade de postar</dd></div>
                       <div><dt className="mb-[3px] text-xs text-subtle uppercase">O que valoriza</dt><dd className="m-0 text-[15px]">Rapidez, estética consistente e presença nas redes</dd></div>
                   </dl>
-              </aside>
+              </Card>
           </div>
 
           <div className="mx-auto mt-[50px] max-w-[1180px]">
-              <div className="grid grid-cols-3 gap-5 max-[1024px]:grid-cols-2 max-[640px]:grid-cols-1">
-                  <div className="rounded-[18px] border border-border bg-card p-[25px]">
-                      <h3 className="mb-[15px] text-[17px]">🎓 Estudantes</h3>
-                      <p className="m-0 text-sm text-muted">Momentos de faculdade, amigos, viagens e eventos que merecem ser registrados sem esforço</p>
-                  </div>
-                  <div className="rounded-[18px] border border-border bg-card p-[25px]">
-                      <h3 className="mb-[15px] text-[17px]">📱 Geração Z</h3>
-                      <p className="m-0 text-sm text-muted">Acostumados com vídeo curto e experiências rápidas, sem terem que fazer muito.</p>
-                  </div>
-                  <div className="rounded-[18px] border border-border bg-card p-[25px]">
-                      <h3 className="mb-[15px] text-[17px]">🎨 Criadores casuais</h3>
-                      <p className="m-0 text-sm text-muted">Querem produzir conteúdo bonito no dia a dia com facilidade.</p>
-                  </div>
-              </div>
+              <CardGrid
+                  className="grid grid-cols-3 gap-5 max-[1024px]:grid-cols-2 max-[640px]:grid-cols-1"
+                  items={audiences}
+                  renderItem={(audience) => <InfoCard {...audience} />}
+              />
           </div>
       </section>
   )

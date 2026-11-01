@@ -2,6 +2,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import AboutSection from './components/AboutSection'
 import AudienceSection from './components/AudienceSection'
+import SentimentAnalysisSection from './components/SentimentAnalysisSection'
 import GallerySection from './components/GallerySection'
 import TeamSection from './components/TeamSection'
 import ContactSection from './components/ContactSection'
@@ -16,6 +17,7 @@ function App() {
         <Hero/>
         <AboutSection/>
         <AudienceSection/>
+        <SentimentAnalysisSection/>
         <GallerySection/>
         <TeamSection/>
         <ContactSection/>

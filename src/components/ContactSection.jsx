@@ -1,3 +1,5 @@
+import Card from './Card'
+
 const ContactSection = () => {
   return (
     <section className="mx-auto grid w-full max-w-[1180px] grid-cols-[0.9fr_1.1fr] gap-[50px] px-[3%] py-20 max-[1024px]:grid-cols-1 max-[640px]:px-[5%] max-[640px]:py-[55px]" id="contato">
@@ -19,7 +21,7 @@ const ContactSection = () => {
         </ul>
       </div>
 
-      <form className="grid gap-[18px] rounded-[18px] border border-border bg-card p-[30px] max-[640px]:p-5">
+      <Card as="form" className="grid gap-[18px] bg-card p-[30px] max-[640px]:p-5">
         <div className="grid gap-[6px]">
           <label className="text-[13px] text-muted" htmlFor="nome">Nome</label>
           <input className="w-full rounded-[10px] border border-border bg-page p-3 font-sans text-[15px] text-copy focus:border-accent focus:outline-none" type="text" id="nome" name="nome" required />
@@ -33,7 +35,7 @@ const ContactSection = () => {
           <textarea className="w-full rounded-[10px] border border-border bg-page p-3 font-sans text-[15px] text-copy focus:border-accent focus:outline-none" id="mensagem" name="mensagem" rows="4" placeholder="isso não funciona, tá? meramente ilustrativo" required></textarea>
         </div>
         <button className="w-fit cursor-pointer rounded-[30px] border-0 bg-accent-dark px-[25px] py-[14px] font-bold text-copy hover:bg-accent-dark-hover" type="submit">Enviar mensagem</button>
-      </form>
+      </Card>
     </section>
   )
 }
