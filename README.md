@@ -1,16 +1,49 @@
-# React + Vite
+# Synesthesia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page do Synesthesia, uma proposta de recurso para a câmera JOVI que transforma fotos em conteúdo pronto para compartilhar. O projeto também oferece recomendações aleatórias de músicas com prévias de áudio.
 
-Currently, two official plugins are available:
+## Tecnologias utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** — construção da interface com componentes.
+- **Vite** — servidor de desenvolvimento e build.
+- **Tailwind CSS 4** — estilização responsiva com classes utilitárias.
+- **React Router** — navegação entre páginas.
+- **Lucide React** — biblioteca de ícones.
+- **iTunes Search API** — busca de músicas e prévias de áudio.
 
-## React Compiler
+## Como executar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+É necessário ter o [Node.js](https://nodejs.org/) instalado.
 
-## Expanding the ESLint configuration
+1. Clone o repositório e entre na pasta do projeto.
+2. Instale as dependências:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   ```bash
+   npm install
+   ```
+
+3. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Acesse no navegador o endereço informado pelo Vite, normalmente `http://localhost:5173`.
+
+### Outros comandos
+
+```bash
+npm run build    # Gera a versão de produção em dist/
+npm run preview  # Serve localmente a versão de produção
+npm run lint     # Executa o ESLint
+```
+
+## Integrantes
+
+| Nome | RM | Responsabilidade |
+|---|---:|---|
+| Sávio Afonso | 570789 | Desenvolvimento Back-end |
+| Ana Beatriz | 572278 | Scrum Master |
+| Victor Pontes | 572781 | Desenvolvimento Front-end |
+| Arthur Carvalho | 570387 | Pesquisa e Documentação |
+| Carolina Hada | 571664 | UX/UI Design |
