@@ -1,30 +1,13 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import AboutSection from './components/AboutSection'
-import AudienceSection from './components/AudienceSection'
-import SentimentAnalysisSection from './components/SentimentAnalysisSection'
-import GallerySection from './components/GallerySection'
-import TeamSection from './components/TeamSection'
-import ContactSection from './components/ContactSection'
-import Footer from './components/Footer'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import MusicRecommendationsPage from './pages/MusicRecommendationsPage'
 
-function App() {
-
-  return (
-    <>
-      <Header />
-      <main>
-        <Hero/>
-        <AboutSection/>
-        <AudienceSection/>
-        <SentimentAnalysisSection/>
-        <GallerySection/>
-        <TeamSection/>
-        <ContactSection/>
-      </main>
-      <Footer/>
-    </>
-  )
-}
+const App = () => (
+  <Routes>
+    <Route element={<HomePage />} path="/" />
+    <Route element={<MusicRecommendationsPage />} path="/descobrir-musicas" />
+    <Route element={<Navigate replace to="/" />} path="*" />
+  </Routes>
+)
 
 export default App

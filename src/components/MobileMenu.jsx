@@ -1,13 +1,15 @@
+import { Link } from 'react-router-dom'
+
 const links = [
-  ['#solucao', 'A Solução'],
-  ['#publico-alvo', 'Público‑Alvo'],
-  ['#analise', 'Descobrir músicas'],
-  ['#galeria', 'Galeria'],
-  ['#equipe', 'Nossa Equipe'],
-  ['#contato', 'Contato'],
+  { section: 'solucao', label: 'A Solução' },
+  { section: 'publico-alvo', label: 'Público‑Alvo' },
+  { to: '/descobrir-musicas', label: 'Descobrir músicas' },
+  { section: 'galeria', label: 'Galeria' },
+  { section: 'equipe', label: 'Nossa Equipe' },
+  { section: 'contato', label: 'Contato' },
 ]
 
-const MobileMenu = ({ isOpen, onToggle, onClose }) => (
+const MobileMenu = ({ isOpen, onToggle, onClose, sectionHref }) => (
   <>
     <button
       aria-controls="mobile-nav"
@@ -31,15 +33,26 @@ const MobileMenu = ({ isOpen, onToggle, onClose }) => (
         className="absolute left-0 right-0 top-full flex flex-col border-b border-border bg-page px-[5%] py-3 shadow-lg min-[641px]:hidden"
         id="mobile-nav"
       >
-        {links.map(([href, label]) => (
-          <a
-            className="py-3 text-sm text-muted hover:text-accent"
-            href={href}
-            key={href}
-            onClick={onClose}
-          >
-            {label}
-          </a>
+        {links.map(({ section, to, label }) => (
+          to ? (
+            <Link
+              className="py-3 text-sm text-muted hover:text-accent"
+              key={to}
+              onClick={onClose}
+              to={to}
+            >
+              {label}
+            </Link>
+          ) : (
+            <a
+              className="py-3 text-sm text-muted hover:text-accent"
+              href={sectionHref(section)}
+              key={section}
+              onClick={onClose}
+            >
+              {label}
+            </a>
+          )
         ))}
       </nav>
     )}

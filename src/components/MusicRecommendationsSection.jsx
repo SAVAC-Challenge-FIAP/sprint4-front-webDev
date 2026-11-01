@@ -23,7 +23,7 @@ const shuffle = (items) => {
   return shuffled
 }
 
-const SentimentAnalysisSection = () => {
+const MusicRecommendationsSection = () => {
   const [tracks, setTracks] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
@@ -97,14 +97,14 @@ const SentimentAnalysisSection = () => {
   return (
     <section
       className="mx-auto w-full max-w-[1180px] px-[3%] py-20 max-[640px]:px-[5%] max-[640px]:py-[55px]"
-      id="analise"
+      id="musicas"
     >
       <p className="mb-[15px] text-xs tracking-[2px] text-accent uppercase">
         EXPERIMENTE
       </p>
-      <h2 className="mb-[15px] max-w-[600px] text-[clamp(26px,3vw,37px)]">
+      <h1 className="mb-[15px] max-w-[600px] text-[clamp(26px,3vw,37px)]">
         Descubra sua próxima trilha
-      </h2>
+      </h1>
       <p className="mb-8 max-w-[650px] text-base text-muted">
         Explore três músicas aleatórias de diferentes estilos e ouça uma prévia
         sem sair da página.
@@ -156,4 +156,4 @@ const SentimentAnalysisSection = () => {
   )
 }
 
-export default SentimentAnalysisSection
+export default MusicRecommendationsSection
